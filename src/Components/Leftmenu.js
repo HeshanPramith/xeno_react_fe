@@ -22,11 +22,11 @@ export default function Leftmenu() {
 
     return (
         <>
-            <h5>Menu</h5>
+            <h5 className='text-start'>Welcome to XENO</h5>
             <ListGroup className='groupview' defaultActiveKey="#link1">
                 <NavLink to="/Subscription" className="list-group-item"><FontAwesomeIcon icon={faDollarSign} /> Subscription</NavLink>
-                <NavLink to="/Settings" className="list-group-item">Settings</NavLink>
                 <ListGroup.Item action>Dashboard</ListGroup.Item>
+                <NavLink to="/Settings" className="list-group-item">Settings</NavLink>                
                 <ListGroup.Item action>Employees</ListGroup.Item>
                 <ListGroup.Item action>Payroll</ListGroup.Item>
                 <ListGroup.Item action>Company</ListGroup.Item>

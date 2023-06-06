@@ -14,7 +14,7 @@ import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // import { faGear } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
-import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
+import { faCircleUser, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 
 export default function Header() {
 
@@ -38,7 +38,7 @@ export default function Header() {
             <header>
                 <Row className='h-100'>
                     <Col xs={3} sm={3} md={4} lg={3} xl={3} xxl={2} className='d-flex justify-content-between align-items-center'>
-                        <h5><span className='logofnt'><span>X</span>ENO</span></h5>
+                        <h5><Link to="."><span className='logofnt'><span>X</span>ENO</span></Link></h5>
                     </Col>
                     <Col xs={9} sm={9} md={8} lg={9} xl={9} xxl={10} className='d-flex justify-content-between align-items-center'>
                         <div className=''></div>
@@ -54,7 +54,7 @@ export default function Header() {
                             </InputGroup>
                         </Form>
                         <Dropdown as={ButtonGroup} className='user-cog'>
-                            <Button size='sm' variant="light" className='usr'>Heshan Pramith</Button>
+                            <Button size='sm' variant="light" className='usr'><FontAwesomeIcon icon={faCircleUser} /> Heshan Pramith</Button>
                             <Dropdown.Toggle size='sm' split variant="light" className='cog' id="dropdown-split-basic" />
                             <Dropdown.Menu>
                                 <Link className="dropdown-item" to="/Subscription">Dashboard</Link>
