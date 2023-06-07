@@ -144,19 +144,22 @@ export default function Subscription() {
                                 </Row>
                                 <div className='total-fix'>
                                     <Col xs={12}>
-                                        <div  className='d-sm-flex align-items-center justify-content-end my-3'>
-                                            <label htmlFor="subscribe" className='subscribe-wrp'>
-                                                <input
-                                                type="checkbox"
-                                                value={isSubscribed}
-                                                onChange={handleChange}
-                                                id="subscribe"
-                                                className='subscribe'
-                                                name="subscribe"
-                                                />
-                                                I Agree & Download the terms & conditions
-                                            </label>
-                                            <Button size='sm' className='conf ms-4' disabled={!isSubscribed}><FontAwesomeIcon icon={faCircleCheck} /> Confirm & Proceed</Button>
+                                        <div  className='d-sm-flex align-items-center align-content-between flex-wrap justify-content-center justify-content-lg-between my-3'>
+                                            <span>Total : {getFormattedPrice(total)}</span>
+                                            <div className=''>
+                                                <label htmlFor="subscribe" className='subscribe-wrp'>
+                                                    <input
+                                                    type="checkbox"
+                                                    value={isSubscribed}
+                                                    onChange={handleChange}
+                                                    id="subscribe"
+                                                    className='subscribe'
+                                                    name="subscribe"
+                                                    />
+                                                    I Agree & Download the terms & conditions
+                                                </label>
+                                                <Button size='sm' className='conf ms-4' disabled={!isSubscribed}><FontAwesomeIcon icon={faCircleCheck} /> Confirm & Proceed</Button>
+                                            </div>
                                         </div>
                                     </Col>
                                 </div>

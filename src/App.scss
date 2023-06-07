@@ -964,7 +964,7 @@ button {
 
 .total-fix {
     position: sticky;
-    background: rgba(214, 255, 214, 0.837);
+    background: rgba(214, 255, 214, 0.897);
     width: 100%;
     bottom: 0;
     margin: 15px 0;
@@ -972,6 +972,13 @@ button {
     border-radius: 5px;
     border: dashed 2px $green;
     z-index: 100;
+
+    span {
+        float: left;
+        font-size: 20px;
+        color: $base-color;
+        font-weight: 600;
+    }
 }
 
 /* width */
@@ -1050,6 +1057,34 @@ button {
             &.totalsub {
                 width: calc(100% + -30px);
             }
+        }
+    }
+
+    .total-fix {
+        position: relative;
+        height: 140px;
+        bottom: 0;
+        background: rgb(214, 255, 214);
+        width: 100%;
+        right: 0;
+        top: 15px;
+        padding: 0 15px;
+        border-radius: 5px;
+        border: dashed 2px $green;
+        text-align: center;
+
+        span {
+            width: 100%;
+        }
+
+        label {
+            text-align: center !important;
+            margin: 10px 0 0 0;
+            width: 100%;
+        }
+
+        button {
+            margin: 15px 0 0 0 !important;
         }
     }
 }
@@ -1202,7 +1237,7 @@ button {
 
     .total-fix {
         position: relative;
-        height: 95px;
+        height: 140px;
         bottom: 0;
         background: rgb(214, 255, 214);
         width: 100%;
@@ -1211,5 +1246,15 @@ button {
         padding: 0 15px;
         border-radius: 5px;
         border: dashed 2px $green;
+        text-align: center;
+
+        label {
+            text-align: center !important;
+            margin: 10px 0 0 0;
+        }
+
+        button {
+            margin: 15px 0 0 0 !important;
+        }
     }
 }
