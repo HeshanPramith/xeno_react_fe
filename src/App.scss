@@ -74,6 +74,14 @@ body {
     color: #313131;
     background: #ffffff;
 
+    &.common-page {
+        padding: 50px 0 0 0;
+
+        .main-cont {
+            height: auto;
+        }
+    }
+
     .main-cont {
         height: 100vh;
         padding-bottom: 0!important;
@@ -390,6 +398,10 @@ header {
     height: 50px;
     background: $base-color;
     background: linear-gradient(to left, $base-color1 0%, $base-color 100%);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10000;
 
     svg {
         margin: 0 !important;
@@ -462,6 +474,10 @@ header {
     }
 }
 
+button {
+    font-size: 12px !important;
+}
+
 .common-page {
     background: #d6f1ff;
 
@@ -515,26 +531,200 @@ header {
         margin: 0 -10px;
     }
 
+    .colorrize {
+
+        div {
+
+            .sub-each {
+                position: relative;
+                overflow: hidden;
+
+                &:hover {
+
+                    &::after {
+                        bottom: 0;
+                        left: 0;
+                        z-index: 100;
+                        transition: all 0.2s ease-out;
+                        z-index: 1;
+                        border-radius: 0;
+                    }
+                }
+                
+                &::after {
+                    width: calc(100% + 60px) !important;
+                    left: -30px !important;
+                    height: 200px;
+                    border-radius: 100%;
+                    content: "";
+                    position: absolute;
+                    bottom: -160px;
+                    z-index: 10;
+                    opacity: 0.9;
+                }
+
+                &:nth-child(1) {
+
+                    &::after {
+                        background: #007b63;
+                    }
+                    
+                    &:hover {
+                        background: #007b63;
+                    }
+                }
+
+                &:nth-child(2) {
+
+                    &::after {
+                        background: #D10000;
+                    }
+                    
+                    &:hover {
+                        background: #D10000;
+                    }
+                }
+
+                &:nth-child(3) {
+
+                    &::after {
+                        background: #f2c438;
+                    }
+                    
+                    &:hover {
+                        background: #f2c438;
+                    }
+                }
+
+                &:nth-child(4) {
+
+                    &::after {
+                        background: #674ea7;
+                    }
+                    
+                    &:hover {
+                        background: #674ea7;
+                    }
+                }
+
+                &:nth-child(5) {
+
+                    &::after {
+                        background: #3578a5;
+                    }
+                    
+                    &:hover {
+                        background: #3578a5;
+                    }
+                }
+
+                &:nth-child(6) {
+
+                    &::after {
+                        background: #221da0;
+                    }
+                    
+                    &:hover {
+                        background: #221da0;
+                    }
+                }
+
+                &:nth-child(7) {
+
+                    &::after {
+                        background: #0f9100;
+                    }
+                    
+                    &:hover {
+                        background: #0f9100;
+                    }
+                }
+            }
+        }
+    }
+
+    .subscription-total {
+        color: $white;
+
+        h5 {
+            float: left;
+            width: 100%;
+            text-align: center;
+            font-size: 20px;
+            font-weight: 400;
+
+            span {
+                float: left;
+                width: 100%;
+                font-size: 24px;
+                font-weight: 500;
+                margin: 15px 0 0 0;
+            }
+        }
+    }
+    
     .sub-each {
-        padding: 50px 15px 15px 15px;
-        background: linear-gradient(to bottom, $white 30%, #0c364c14 100%);
+        padding: 15px;
+        background: $base-color1;
         border-radius: 5px;
-        margin: 10px 0;
+        margin: 15px;
         text-align: center;
-        width: 100%;
+        width: calc(20% + -30px);
         height: 200px;
         cursor: pointer;
         transition:all 0.3s ease-out;
+        display: flex;
+        justify-content: center;
+        align-items: center;
 
+        &.totalsub {
+            width: calc(60% + -30px);
+            background: $green;
+            background: linear-gradient(-90deg, $base-color, $green);
+            background-size: 200% 200%;
+            // animation: gradient 6s ease infinite;
+        }
+        
         svg {
-            font-size: 45px;
-            margin: 0 0 35px 0;
-            color: $base-color1;
+            font-size: 35px;
+            margin: 0;
+            color: $white;
+            position: relative;
+            z-index: 100;
+        }
+
+        .options-list-item {
+
+            .opt-name {
+                font-size: 14px !important;
+                float: left;
+                width: 100%;
+                margin: 15px 0 0 0;
+                color: $white;
+                position: relative;
+                z-index: 100;
+            }
+
+            .right-section {
+                float: left;
+                width: 100%;
+                font-size: 18px;
+                font-weight: 500;
+                position: relative;
+                z-index: 100;
+                bottom: -17px;
+                transition: all 0.3s ease-out;
+            }
+        }
+
+        label {
+            color: $white !important;
+            position: relative;
+            z-index: 100;
         }
 
         &:hover {
-            background: linear-gradient(to bottom, $base-color1 0%, $base-color 100%);
-            transition:all 0.3s ease-out;
+            transition: all 0.3s ease-out;
 
             svg {
                 color: $white;
@@ -542,6 +732,11 @@ header {
 
             label {
                 color: $white;
+            }
+
+            .right-section {
+                bottom: 0;
+                transition: all 0.3s ease-out;
             }
         }
         
@@ -558,6 +753,55 @@ header {
             top: -2px !important;
         }
     }
+
+    &.subscription {
+
+        .subscribe {
+            position: relative;
+            top: 2px;
+            margin: 0 5px 0 0;
+        }
+
+        .conf {
+            background: $green;
+            border-color: $green;
+
+            &.btn:disabled {
+                background: $grey;
+                border-color: $grey;
+            }
+        }
+
+        .form-switch {
+            text-align: center;
+            float: left;
+            width: 100%;
+            padding: 0;
+            position: relative;
+            display: flex !important;
+            flex-direction: column !important;
+            justify-content: center !important;
+            align-items: center !important;            
+
+            .form-check-input {
+                height: 24px;
+                position: relative;
+                width: 44px;
+                display: inline-block;
+                margin: 20px 0 15px 0;
+            }
+
+            label {
+                float: left;
+                width: 100%;
+                text-align: center;
+            }
+        }
+    }
+}
+
+.w-100 {
+    width: 100%;
 }
 
 .dropdown-menu {
@@ -575,11 +819,13 @@ header {
 
 .cont-wrap {
     background: #FFFFFF;
+    background: linear-gradient(90deg, $white, #ffffff00);
     border-radius: 5px;
-    height: calc(100% + -17px);
+    height: calc(100vh + -72px);
     min-height: 250px;
     overflow: auto;
     padding: 0 15px 15px 15px;
+    border-left: solid 5px #d81c1c;
 
     h5 {
         float: left;
@@ -594,10 +840,11 @@ header {
         position: relative;
 
         span {
-            background: #d6f1ff;
-            border-radius: 0 0 5px 5px;
-            padding: 5px 15px;
+            // background: #d6f1ff;
+            // border-radius: 0 0 5px 5px;
+            padding: 10px 2px;
             float: left;
+            margin: 10px 0 0 0;
         }
     }
 }
@@ -610,34 +857,83 @@ header {
         color: #FFFFFF;
         font-size: 14px;
         margin: 0 0 15px 0;
-        padding: 10px 15px;
+        padding: 10px 10px 10px 15px;
         width: 100%;
         text-align: center;
         background: #114f70;
         border-radius: 5px;
         letter-spacing: 1px;
+
+        button {
+            background: none;
+            border: none;
+            float: right;
+
+            svg {
+                margin: 0;
+                color: $white;
+            }
+        }
     }
 
     .groupview {
         background: none;
         border-radius: 0;
         padding-left: 15px;
+        // overflow-x: hidden;
+        // overflow-y: auto;
+        height: calc(100vh + -120px);
 
         .list-group-item {
             background: none;
             border: none;
             color: #FFFFFF;
-            padding: 8px 12px;
+            padding: 8px 12px 8px 5px;
             border-radius: 5px;
             font-size: 13px;
             text-align: left;
+            position: relative;
+
+            .ico {
+                width: 25px;
+                text-align: center;
+                float: left;
+                margin: 0 5px 0 0;
+            }
+
+            svg {
+                margin: 0;
+            }
 
             &.active {
-                background: #FFFFFF !important;
+                // background: #ff8a19 !important;
+                background: linear-gradient(90deg, #dd2828, #d81c1c);
                 width: calc(100% + 24px);
                 border-radius: 5px 0 0 5px;
-                color: $base-color;
+                color: $white;
                 font-weight: 500;
+            }
+        }
+    }
+}
+
+@media (min-width: 768px) and (max-width: 10000000px) {
+    .h-calc-subs {
+        height: calc(100vh + -130px) !important;
+    }
+}
+
+@media (min-width: 1217px) and (max-width: 1400px) {
+
+    .common-page {
+
+        .sub-each {
+
+            width: calc(33.333% - 30px);
+
+            &.totalsub {
+                width: calc(66.333% + -30px);
+                background: $green;
             }
         }
     }
@@ -648,12 +944,38 @@ header {
     body.signup .log-right .form-outer {
         max-width: 400px;
     }
+
+    .common-page {
+
+        .sub-each {
+
+            width: calc(33.333% - 30px);
+
+            &.totalsub {
+                width: calc(66.333% + -30px);
+                background: $green;
+            }
+        }
+    }
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
 
     body.signup .log-right .form-outer {
         max-width: 350px;
+    }
+
+    .common-page {
+
+        .sub-each {
+
+            width: calc(50% - 30px);
+
+            &.totalsub {
+                width: calc(100% + -30px);
+                background: $green;
+            }
+        }
     }
 }
 
@@ -716,10 +1038,28 @@ header {
     
     .lft-menu {
 
+        h5 {
+            margin: 0;
+        }
+
         .groupview {
             padding: 0 15px;
+            height: 0;
+            overflow-x: hidden;
+            overflow-y: auto;
+
+            &.active {
+                height: auto;
+                margin-top: 15px;
+            }
 
             .list-group-item {
+                width: 100% !important;
+                float: left;
+
+                &:last-child {
+                    margin-bottom: 10px;
+                }
 
                 &.active {
                     width: 100% !important;
@@ -731,5 +1071,50 @@ header {
 
     .cont-wrap {
         height: auto;
+        margin-bottom: 15px;
+        background: #FFFFFF;
+        background: linear-gradient(180deg, $white, #ffffff00);
+        border-top: solid 5px #d81c1c;
+        border-left: none;
+    }
+
+    .subscribe-wrp {
+        width: 100%;
+        text-align: right;
+    }
+
+    .conf {
+        float: right;
+        margin: 10px 0 0 0;
+    }
+
+    .common-page {
+
+        .sub-each {
+            width: calc(50% + -30px);
+            height: 200px;
+
+            &::after {
+                bottom: -150px !important;
+                border-radius: 50% !important;
+            }
+
+            &:nth-child(5) {
+                width: 100%;
+            }
+
+            &:nth-child(6) {
+                width: 100%;
+            }
+
+            &:nth-child(7) {
+                width: 100%;
+            }
+
+            &.totalsub {
+                width: calc(100% + -30px);
+                background: $green;
+            }
+        }
     }
 }
