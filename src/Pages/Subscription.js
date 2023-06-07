@@ -103,6 +103,7 @@ export default function Subscription() {
                                             <div className='sub-each totalsub d-flex align-items-center justify-content-center flex-column'>
                                                 <div className="options-list-item">
                                                     <div className='subscription-total'>
+                                                        <p>Dummy text here</p>
                                                         <h5>Total Amount <span>{getFormattedPrice(total)}</span></h5>
                                                     </div>
                                                 </div>
@@ -111,8 +112,8 @@ export default function Subscription() {
                                     </Row>
                                 </Col>
                                 <Row>
-                                    <Col xs={12} sm={12} md={6} className='mt-2'>
-                                        <Card bg='success' text='light' className="text-center">
+                                    <Col xs={12} sm={12} md={12} lg={6} xl={6} xxl={6} className='mt-2 mb-2 mb-lg-0'>
+                                        <Card bg='dark' text='light' className="text-center">
                                             <Card.Header>Announcements</Card.Header>
                                             <Card.Body>
                                                 <Card.Title>Special Announcement!</Card.Title>
@@ -125,15 +126,17 @@ export default function Subscription() {
                                             <Card.Footer className="text-muted">2 days ago</Card.Footer>
                                         </Card>
                                     </Col>
-                                    <Col xs={12} sm={12} md={6} className='mt-2'>
-                                        <Card bg='secondary' text='light' className="text-center">
-                                            <Card.Header>News</Card.Header>
+                                    <Col xs={12} sm={12} md={12} lg={6} xl={6} xxl={6} className='mt-2'>
+                                        <Card bg='dark' text='light' className="text-center">
+                                            <Card.Header>Information</Card.Header>
                                             <Card.Body>
-                                                <Card.Title>News Alert!</Card.Title>
+                                                <Card.Title>Information</Card.Title>
                                                 <Card.Text>
-                                                    News Alert
+                                                    Info 1
                                                 </Card.Text>
+                                                <Link to="/Subscription#">Subscription Info</Link>
                                                 <Link to="/Subscription#">GENESIIS</Link>
+                                                <Link to="/Subscription#">XENO</Link>
                                             </Card.Body>
                                             <Card.Footer className="text-muted">&nbsp;</Card.Footer>
                                         </Card>
