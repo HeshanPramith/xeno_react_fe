@@ -12,8 +12,8 @@ import { Button, Form } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleCheck } from '@fortawesome/free-solid-svg-icons';
 import { Options } from "../Utils/Options";
-
-const getFormattedPrice = (price) => `$ ${price.toFixed(2)}`;
+import Card from 'react-bootstrap/Card';
+import { Link } from 'react-router-dom';
 
 export default function Subscription() {
 
@@ -23,6 +23,8 @@ export default function Subscription() {
             document.body.classList.remove('common-page', 'subscription')
         }
     }, [])
+
+    const getFormattedPrice = (price) => `$ ${price.toFixed(2)}`;
 
     const [isSubscribed, setIsSubscribed] = useState(false);
 
@@ -69,7 +71,7 @@ export default function Subscription() {
                 </Col>
                 <Col xs={12} sm={12} md={8} lg={9} xl={9} xxl={10} className='mt-1 mt-md-0'>
                     <div className='cont-wrap mt-2'>
-                        <h5 className='inner-title'><span>Select Your Subscription Plan</span></h5>
+                        <h5 id='top' className='inner-title'><span>Select Your Subscription Plan</span></h5>
                         <Row>
                             <Form>
                                 <Col xs={12}>
@@ -108,22 +110,53 @@ export default function Subscription() {
                                         </div>
                                     </Row>
                                 </Col>
-                                <Col xs={12}>
-                                    <div  className='d-sm-flex align-items-center justify-content-end my-3'>
-                                        <label htmlFor="subscribe" className='subscribe-wrp'>
-                                            <input
-                                            type="checkbox"
-                                            value={isSubscribed}
-                                            onChange={handleChange}
-                                            id="subscribe"
-                                            className='subscribe'
-                                            name="subscribe"
-                                            />
-                                            I Agree & Download the terms & conditions
-                                        </label>
-                                        <Button size='sm' className='conf ms-4' disabled={!isSubscribed}><FontAwesomeIcon icon={faCircleCheck} /> Confirm & Proceed</Button>
-                                    </div>
-                                </Col>
+                                <Row>
+                                    <Col xs={12} sm={12} md={6} className='mt-2'>
+                                        <Card bg='success' text='light' className="text-center">
+                                            <Card.Header>Announcements</Card.Header>
+                                            <Card.Body>
+                                                <Card.Title>Special Announcement!</Card.Title>
+                                                <Card.Text>
+                                                    New Features/Modules Released
+                                                </Card.Text>
+                                                <Link to="/Subscription#">Leave Management</Link>
+                                                <Link to="/Subscription#">Reports</Link>
+                                            </Card.Body>
+                                            <Card.Footer className="text-muted">2 days ago</Card.Footer>
+                                        </Card>
+                                    </Col>
+                                    <Col xs={12} sm={12} md={6} className='mt-2'>
+                                        <Card bg='secondary' text='light' className="text-center">
+                                            <Card.Header>News</Card.Header>
+                                            <Card.Body>
+                                                <Card.Title>News Alert!</Card.Title>
+                                                <Card.Text>
+                                                    News Alert
+                                                </Card.Text>
+                                                <Link to="/Subscription#">GENESIIS</Link>
+                                            </Card.Body>
+                                            <Card.Footer className="text-muted">&nbsp;</Card.Footer>
+                                        </Card>
+                                    </Col>
+                                </Row>
+                                <div className='total-fix'>
+                                    <Col xs={12}>
+                                        <div  className='d-sm-flex align-items-center justify-content-end my-3'>
+                                            <label htmlFor="subscribe" className='subscribe-wrp'>
+                                                <input
+                                                type="checkbox"
+                                                value={isSubscribed}
+                                                onChange={handleChange}
+                                                id="subscribe"
+                                                className='subscribe'
+                                                name="subscribe"
+                                                />
+                                                I Agree & Download the terms & conditions
+                                            </label>
+                                            <Button size='sm' className='conf ms-4' disabled={!isSubscribed}><FontAwesomeIcon icon={faCircleCheck} /> Confirm & Proceed</Button>
+                                        </div>
+                                    </Col>
+                                </div>
                             </Form>
                         </Row>
                     </div>

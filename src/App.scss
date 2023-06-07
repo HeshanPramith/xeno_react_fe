@@ -480,6 +480,7 @@ button {
 
 .common-page {
     background: #d6f1ff;
+    position: relative;
 
     h5 {
         margin: 0;
@@ -545,7 +546,7 @@ button {
                         bottom: 0;
                         left: 0;
                         z-index: 100;
-                        transition: all 0.2s ease-out;
+                        transition: all 0.3s ease-out;
                         z-index: 1;
                         border-radius: 0;
                     }
@@ -558,7 +559,7 @@ button {
                     border-radius: 100%;
                     content: "";
                     position: absolute;
-                    bottom: -160px;
+                    bottom: -193px;
                     z-index: 10;
                     opacity: 0.9;
                 }
@@ -665,7 +666,7 @@ button {
     
     .sub-each {
         padding: 15px;
-        background: $base-color1;
+        background: linear-gradient(0deg, #FFFFFF, rgba(255, 255, 255, 0));
         border-radius: 5px;
         margin: 15px;
         text-align: center;
@@ -676,19 +677,24 @@ button {
         display: flex;
         justify-content: center;
         align-items: center;
+        box-shadow: 0px 0px 3px -1px #33333361;
 
         &.totalsub {
             width: calc(60% + -30px);
-            background: $green;
-            background: linear-gradient(-90deg, $base-color, $green);
-            background-size: 200% 200%;
+            background: radial-gradient(circle, #FFFFFF, rgba(255, 255, 255, 0));
             // animation: gradient 6s ease infinite;
+            color: #000000;
+
+            h5 {
+                color: #000000;
+            }
         }
         
         svg {
             font-size: 35px;
             margin: 0;
-            color: $white;
+            color: $base-color;
+            opacity: 0.7;
             position: relative;
             z-index: 100;
         }
@@ -700,9 +706,10 @@ button {
                 float: left;
                 width: 100%;
                 margin: 15px 0 0 0;
-                color: $white;
+                color: $base-color;
                 position: relative;
                 z-index: 100;
+                font-weight: 500;
             }
 
             .right-section {
@@ -712,7 +719,8 @@ button {
                 font-weight: 500;
                 position: relative;
                 z-index: 100;
-                bottom: -17px;
+                bottom: -5px;
+                color: $base-color;
                 transition: all 0.3s ease-out;
             }
         }
@@ -728,6 +736,7 @@ button {
 
             svg {
                 color: $white;
+                opacity: 1;
             }
 
             label {
@@ -736,7 +745,12 @@ button {
 
             .right-section {
                 bottom: 0;
+                color: $white;
                 transition: all 0.3s ease-out;
+            }
+
+            .opt-name {
+                color: $white;
             }
         }
         
@@ -755,6 +769,10 @@ button {
     }
 
     &.subscription {
+
+        .cont-wrap {
+            padding-bottom: 0px;
+        }
 
         .subscribe {
             position: relative;
@@ -797,6 +815,23 @@ button {
                 text-align: center;
             }
         }
+
+        .card {
+            text-align: left;
+
+            * {
+                text-align: left;
+            }
+
+            a {
+                color: $white;
+                margin: 0 10px 0 0;
+            }
+
+            .card-footer {
+                color: $white !important;
+            }
+        }
     }
 }
 
@@ -826,6 +861,7 @@ button {
     overflow: auto;
     padding: 0 15px 15px 15px;
     border-left: solid 5px #d81c1c;
+    position: relative;
 
     h5 {
         float: left;
@@ -915,6 +951,18 @@ button {
             }
         }
     }
+}
+
+.total-fix {
+    position: sticky;
+    background: rgba(214, 255, 214, 0.837);
+    width: 100%;
+    bottom: 0;
+    margin: 15px 0;
+    padding: 0 15px;
+    border-radius: 5px;
+    border: dashed 2px $green;
+    z-index: 100;
 }
 
 @media (min-width: 768px) and (max-width: 10000000px) {
@@ -1095,7 +1143,7 @@ button {
             height: 200px;
 
             &::after {
-                bottom: -150px !important;
+                bottom: -200px !important;
                 border-radius: 50% !important;
             }
 
@@ -1113,8 +1161,28 @@ button {
 
             &.totalsub {
                 width: calc(100% + -30px);
-                background: $green;
+                background: linear-gradient(0deg, #FFFFFF, rgba(255, 255, 255, 0));
             }
         }
+
+        &.subscription {
+
+            .cont-wrap {
+                padding-bottom: 20px;
+            }
+        }
+    }
+
+    .total-fix {
+        position: relative;
+        height: 95px;
+        bottom: 0;
+        background: rgb(214, 255, 214);
+        width: 100%;
+        right: 0;
+        top: 15px;
+        padding: 0 15px;
+        border-radius: 5px;
+        border: dashed 2px $green;
     }
 }
