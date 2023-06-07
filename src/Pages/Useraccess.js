@@ -8,12 +8,12 @@ import Row from 'react-bootstrap/Row';
 import Header from '../Components/Header';
 import Leftmenu from '../Components/Leftmenu';
 
-export default function Settings() {
+export default function Useraccess() {
 
     useEffect(() => {
-        document.body.classList.add('common-page', 'settings')
+        document.body.classList.add('common-page', 'useraccess')
         return () => {
-            document.body.classList.remove('common-page', 'settings')
+            document.body.classList.remove('common-page', 'useraccess')
         }
     }, [])
     
@@ -30,10 +30,10 @@ export default function Settings() {
                 </Col>
                 <Col xs={12} sm={12} md={8} lg={9} xl={9} xxl={10} className='mt-1 mt-md-0'>
                     <div className='cont-wrap mt-2'>
-                        <h5 id='top' className='inner-title'><span>Settings</span></h5>
+                        <h5 id='top' className='inner-title'><span>User Access Control</span></h5>
                         <Row>
                             <Col xs={12}>
-                                Settings Page
+                                User Access Control Page
                             </Col>
                         </Row>
                     </div>

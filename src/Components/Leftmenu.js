@@ -36,8 +36,8 @@ export default function Leftmenu() {
                 <NavLink to="/Payroll" className="list-group-item"><span className='ico'><FontAwesomeIcon icon={faHandHoldingDollar} /></span> Payroll</NavLink>
                 <NavLink to="/Company" className="list-group-item"><span className='ico'><FontAwesomeIcon icon={faBuilding} /></span> Company</NavLink>
                 <NavLink to="/Reports" className="list-group-item"><span className='ico'><FontAwesomeIcon icon={faFileArrowDown} /></span> Reports</NavLink>
-                <NavLink to="/Timeatten" className="list-group-item"><span className='ico'><FontAwesomeIcon icon={faStopwatch20} /></span> Time & Attendance</NavLink>
-                <NavLink to="/Leavemannage" className="list-group-item"><span className='ico'><FontAwesomeIcon icon={faPersonWalkingArrowRight} /></span> Leave Management</NavLink>
+                <NavLink to="/Timeattendance" className="list-group-item"><span className='ico'><FontAwesomeIcon icon={faStopwatch20} /></span> Time & Attendance</NavLink>
+                <NavLink to="/Leavemanage" className="list-group-item"><span className='ico'><FontAwesomeIcon icon={faPersonWalkingArrowRight} /></span> Leave Management</NavLink>
                 <NavLink to="/Useraccess" className="list-group-item"><span className='ico'><FontAwesomeIcon icon={faUsersGear} /></span> User Access Control</NavLink>
             </ListGroup>
         </>
