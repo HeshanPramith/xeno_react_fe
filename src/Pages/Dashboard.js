@@ -7,6 +7,8 @@ import { useEffect } from 'react';
 import Row from 'react-bootstrap/Row';
 import Header from '../Components/Header';
 import Leftmenu from '../Components/Leftmenu';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowUpWideShort, faHandHoldingDollar, faPersonWalkingArrowRight, faUsers } from '@fortawesome/free-solid-svg-icons';
 
 export default function Dashboard() {
 
@@ -32,8 +34,45 @@ export default function Dashboard() {
                     <div className='cont-wrap mt-2'>
                         <h5 id='top' className='inner-title'><span>Dashboard</span></h5>
                         <Row>
-                            <Col xs={12}>
-                                Dashboard Page
+                            <Col xs={6} sm={6} md={6} lg={3} xl={3} xxl={3}>
+                                <div className='block-cmm block-1'>
+                                    <FontAwesomeIcon icon={faUsers} />
+                                    <div className='info'>
+                                        <h3>Employees</h3>
+                                        <p>482</p>
+                                        <span>3 min ago</span>
+                                    </div>
+                                </div>
+                            </Col>
+                            <Col xs={6} sm={6} md={6} lg={3} xl={3} xxl={3}>
+                                <div className='block-cmm block-2'>
+                                    <FontAwesomeIcon icon={faPersonWalkingArrowRight} />
+                                    <div className='info'>
+                                        <h3>Leaves</h3>
+                                        <p>15</p>
+                                        <span>3 min ago</span>
+                                    </div>
+                                </div>
+                            </Col>
+                            <Col xs={6} sm={6} md={6} lg={3} xl={3} xxl={3}>
+                                <div className='block-cmm block-3'>
+                                    <FontAwesomeIcon icon={faHandHoldingDollar} />
+                                    <div className='info'>
+                                        <h3>Salary</h3>
+                                        <p>LKR 3M</p>
+                                        <span>3 min ago</span>
+                                    </div>
+                                </div>
+                            </Col>
+                            <Col xs={6} sm={6} md={6} lg={3} xl={3} xxl={3}>
+                                <div className='block-cmm block-4'>
+                                    <FontAwesomeIcon icon={faUsers} />
+                                    <div className='info'>
+                                        <h3>Attendance</h3>
+                                        <p><FontAwesomeIcon icon={faArrowUpWideShort} /> <b>10.14%</b></p>
+                                        <span>3 min ago</span>
+                                    </div>
+                                </div>
                             </Col>
                         </Row>
                     </div>
