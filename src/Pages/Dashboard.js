@@ -9,6 +9,10 @@ import Header from '../Components/Header';
 import Leftmenu from '../Components/Leftmenu';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowUpWideShort, faHandHoldingDollar, faPersonWalkingArrowRight, faUsers } from '@fortawesome/free-solid-svg-icons';
+import { Bar } from 'react-chartjs-2';
+import { Doughnut } from "react-chartjs-2";
+import { Chart as ChartJS, ArcElement, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend } from 'chart.js';
+import { piechartdata, data } from "../Utils/Chartdata";
 
 export default function Dashboard() {
 
@@ -18,6 +22,8 @@ export default function Dashboard() {
             document.body.classList.remove('common-page', 'dashboard')
         }
     }, [])
+
+    ChartJS.register(ArcElement, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
     
     return (
         <>
@@ -72,6 +78,20 @@ export default function Dashboard() {
                                         <p><FontAwesomeIcon icon={faArrowUpWideShort} /> <b>10.14%</b></p>
                                         <span>3 min ago</span>
                                     </div>
+                                </div>
+                            </Col>
+                        </Row>
+                        <Row>
+                            <Col xs={12} sm={12} md={6} lg={6} xl={6}>
+                                <div className='each-block'>
+                                    <h6>Total Employees</h6>
+                                    <Doughnut data={piechartdata} />
+                                </div>
+                            </Col>
+                            <Col xs={12} sm={12} md={6} lg={6} xl={6}>
+                                <div className='each-block'>
+                                    <h6>Total Employees</h6>
+                                    <Bar data={data} height={300} />
                                 </div>
                             </Col>
                         </Row>
