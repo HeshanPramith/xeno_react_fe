@@ -5,7 +5,7 @@ export const piechartdata = {
     datasets: [
         {
             label: 'Employees',
-            data: [64, 3, 1, 5, 2],
+            data: [30, 15, 2, 15, 10],
             backgroundColor: [
                 '#8e59d1',
                 '#f89833',
