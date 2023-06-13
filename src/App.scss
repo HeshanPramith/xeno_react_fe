@@ -1011,6 +1011,19 @@ button {
     text-align: center;
     margin: 0 0 25px 0;
     box-shadow: 0px 3px 3px -1px rgba(51, 51, 51, 0.2666666667);
+    overflow: hidden;
+
+    &::after {
+        position: absolute;
+        left: -100px;
+        top: -110px;
+        width: 200px;
+        height: 200px;
+        background: #ffffff24;
+        content: "";
+        z-index: 1;
+        border-radius: 100%;
+    }
 
     &.block-1 {
         background: #fcb532;
@@ -1027,20 +1040,40 @@ button {
     &.block-4 {
         background: #ffffff;
 
+        &::after {
+            position: absolute;
+            left: -100px;
+            top: -110px;
+            width: 200px;
+            height: 200px;
+            background: $base-color;
+            content: "";
+            z-index: 1;
+            border-radius: 100%;
+        }
+
         svg {
-            color: $base-color;
+            color: $white;
+            position: relative;
+            z-index: 10;
         }
 
         span {
             color: $base-color;
+            position: relative;
+            z-index: 10;
         }
 
         h3 {
             color: $base-color;
+            position: relative;
+            z-index: 10;
         }
 
         p {
             color: $green !important;
+            position: relative;
+            z-index: 10;
 
             svg {
                 color: $green !important;
@@ -1051,7 +1084,9 @@ button {
     > svg {
         color: $white;
         font-size: 30px;
-        margin: 0 15px 0 0;
+        margin: -30px 15px 0 7px;
+        position: relative;
+        z-index: 10;
     }
 
     h3 {
@@ -1059,6 +1094,9 @@ button {
         color: $white;
         font-size: 16px;
         text-align: right;
+        font-weight: 400;
+        position: relative;
+            z-index: 10;
     }
 
     p {
@@ -1066,6 +1104,8 @@ button {
         font-size: 12px;
         color: $white;
         text-align: right;
+        position: relative;
+            z-index: 10;
 
         svg {
 
@@ -1080,6 +1120,8 @@ button {
         font-weight: 400;
         text-align: right;
         float: right;
+        position: relative;
+        z-index: 10;
     }
 }
 
@@ -1087,14 +1129,17 @@ button {
     background: $white;
     border-radius: 5px;
     padding: 15px;
-    background: linear-gradient(0deg, #FFFFFF, rgba(255, 255, 255, 0));
-    box-shadow: 0px 3px 3px -1px rgba(51, 51, 51, 0.2666666667);
+    background: linear-gradient(0deg, #FFFFFF, rgba(253, 253, 253, 0.5));
+    box-shadow: 0px 2px 0px -1px rgb(51 51 51 / 17%);
     text-align: center;
 
     h6 {
         float: left;
         width: 100%;
-        font-size: 12px;
+        font-size: 13px;
+        text-align: left;
+        font-weight: 400;
+        color: #777777;
     }
 }
 

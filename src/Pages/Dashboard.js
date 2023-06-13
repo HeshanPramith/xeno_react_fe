@@ -8,11 +8,11 @@ import Row from 'react-bootstrap/Row';
 import Header from '../Components/Header';
 import Leftmenu from '../Components/Leftmenu';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowUpWideShort, faHandHoldingDollar, faPersonWalkingArrowRight, faUsers } from '@fortawesome/free-solid-svg-icons';
-import { Bar } from 'react-chartjs-2';
-import { Doughnut } from "react-chartjs-2";
-import { Chart as ChartJS, ArcElement, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend } from 'chart.js';
-import { piechartdata, data } from "../Utils/Chartdata";
+import { faArrowUpWideShort, faHandHoldingDollar, faPersonWalkingArrowRight, faStopwatch20, faUsers } from '@fortawesome/free-solid-svg-icons';
+import { Bar, Line, PolarArea } from 'react-chartjs-2';
+// import { Doughnut } from "react-chartjs-2";
+import { Chart as ChartJS, ArcElement, CategoryScale, LinearScale, BarElement, Title, Tooltip, PointElement, LineElement, RadialLinearScale } from 'chart.js';
+import { piechartdata, barchart, linechart } from "../Utils/Chartdata";
 
 export default function Dashboard() {
 
@@ -23,7 +23,7 @@ export default function Dashboard() {
         }
     }, [])
 
-    ChartJS.register(ArcElement, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
+    ChartJS.register(ArcElement, CategoryScale, LinearScale, BarElement, Title, Tooltip, PointElement, LineElement, RadialLinearScale );
     
     return (
         <>
@@ -72,7 +72,7 @@ export default function Dashboard() {
                             </Col>
                             <Col xs={6} sm={6} md={6} lg={3} xl={3} xxl={3}>
                                 <div className='block-cmm block-4'>
-                                    <FontAwesomeIcon icon={faUsers} />
+                                    <FontAwesomeIcon icon={faStopwatch20} />
                                     <div className='info'>
                                         <h3>Attendance</h3>
                                         <p><FontAwesomeIcon icon={faArrowUpWideShort} /> <b>10.14%</b></p>
@@ -82,16 +82,22 @@ export default function Dashboard() {
                             </Col>
                         </Row>
                         <Row>
-                            <Col xs={12} sm={12} md={6} lg={6} xl={6}>
+                            <Col xs={12} sm={12} md={6} lg={4} xl={4}>
                                 <div className='each-block'>
                                     <h6>Total Employees</h6>
-                                    <Doughnut data={piechartdata} />
+                                    <PolarArea data={piechartdata} height={300} />
                                 </div>
                             </Col>
-                            <Col xs={12} sm={12} md={6} lg={6} xl={6}>
+                            <Col xs={12} sm={12} md={6} lg={4} xl={4}>
                                 <div className='each-block'>
-                                    <h6>Total Employees</h6>
-                                    <Bar data={data} height={300} />
+                                    <h6>Employee Attendance (June 2023)</h6>
+                                    <Bar data={barchart} height={300} />
+                                </div>
+                            </Col>
+                            <Col xs={12} sm={12} md={6} lg={4} xl={4}>
+                                <div className='each-block'>
+                                    <h6>Data Chart</h6>
+                                    <Line data={linechart} height={300} />
                                 </div>
                             </Col>
                         </Row>
