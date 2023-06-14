@@ -12,8 +12,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faRightToBracket } from '@fortawesome/free-solid-svg-icons';
 import { faArrowRightLong } from '@fortawesome/free-solid-svg-icons';
 import Countrylist from '../Components/Countrylist';
-import 'react-phone-number-input/style.css'
-import PhoneInput from 'react-phone-number-input'
+import 'react-phone-number-input/style.css';
+import PhoneInput from 'react-phone-number-input';
 
 export default function Signup() {
 

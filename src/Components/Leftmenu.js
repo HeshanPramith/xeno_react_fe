@@ -23,7 +23,7 @@ export default function Leftmenu() {
 
     return (
         <>
-            <h5 className='text-start'>XENO <button onClick={ToggleClass}><FontAwesomeIcon icon={faBars} className='d-block d-sm-none' /></button></h5>
+            <h5 className='text-start'>XENO <button onClick={ToggleClass}><FontAwesomeIcon icon={faBars} className='d-block d-md-none' /></button></h5>
             <ListGroup defaultActiveKey="#link1" className={isActive ? "groupview" : "active groupview"}>
                 <Button className='btn-1'><NavLink to="/Subscription" className="list-group-item"><span className='ico'><FontAwesomeIcon icon={faDollarSign} /></span> Subscription</NavLink></Button>
                 <Button className='btn-2'><NavLink to="/Dashboard" className="list-group-item"><span className='ico'><FontAwesomeIcon icon={faHouse} /></span> Dashboard</NavLink></Button>

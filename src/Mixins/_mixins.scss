@@ -1,0 +1,15 @@
+@mixin save-btn {
+    background: #149b2a !important;
+    color: $white;
+    font-size: 12px;
+    font-weight: 500;
+    border: none;
+}
+
+@mixin clear-btn {
+    background: #e71818 !important;
+    color: $white;
+    font-size: 12px;
+    font-weight: 500;
+    border: none;
+}
