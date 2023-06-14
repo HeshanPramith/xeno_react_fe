@@ -31,6 +31,12 @@ export default function Company() {
     const [selectedTimezone, setSelectedTimezone] = useState (
         Intl.DateTimeFormat().resolvedOptions().timeZone
     )
+
+    const [logoupload, setFile] = useState();
+    function handleChange(e) {
+        console.log(e.target.files);
+        setFile(URL.createObjectURL(e.target.files[0]));
+    }
     
     return (
         <>
@@ -55,11 +61,11 @@ export default function Company() {
                                             <Col xs={6} sm={12} md={12} lg={12} xl={8} xxl={8}>
                                                 <Form.Group className="mb-2">
                                                     <Form.Label>Company Logo</Form.Label>
-                                                    <Form.Control type="file" placeholder=" " size='sm' />
+                                                    <Form.Control type="file" placeholder=" " size='sm' onChange={handleChange} />
                                                 </Form.Group>
                                             </Col>
                                             <Col xs={6} sm={12} md={12} lg={12} xl={4} xxl={4} className='d-flex align-items-center justify-content-center'>
-                                                <Image src='../images/comp_logos/logo.png' fluid />
+                                                <Image src={logoupload} fluid />
                                             </Col>
                                         </Row>
                                     </Col>
