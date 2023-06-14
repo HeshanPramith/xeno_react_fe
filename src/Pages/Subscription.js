@@ -3,7 +3,7 @@
 
 import React from 'react';
 import Col from 'react-bootstrap/Col';
-// import Form from 'react-bootstrap/Form';
+import $ from 'jquery';
 import { useEffect, useState } from 'react';
 import Row from 'react-bootstrap/Row';
 import Header from '../Components/Header';
@@ -57,6 +57,32 @@ export default function Subscription() {
 
         setTotal(totalPrice);
     };
+
+    const shoot = () => {
+        //$(".btn-4").toggleClass("act");
+
+        $("#custom-checkbox-0").on("click", () => {
+            $(".btn-4").toggleClass("act")
+        })
+        $("#custom-checkbox-1").on("click", () => {
+            $(".btn-5").toggleClass("act")
+        })
+        $("#custom-checkbox-2").on("click", () => {
+            $(".btn-6").toggleClass("act")
+        })
+        $("#custom-checkbox-3").on("click", () => {
+            $(".btn-7").toggleClass("act")
+        })
+        $("#custom-checkbox-4").on("click", () => {
+            $(".btn-8").toggleClass("act")
+        })
+        $("#custom-checkbox-5").on("click", () => {
+            $(".btn-9").toggleClass("act")
+        })
+        $("#custom-checkbox-6").on("click", () => {
+            $(".btn-10").toggleClass("act")
+        })
+    }
     
     return (
         <>
@@ -82,7 +108,7 @@ export default function Subscription() {
                                                     <div className='sub-each d-flex align-items-center justify-content-center flex-column' key={index}>
                                                         <div className="options-list-item">
                                                             <div className="left-section">
-                                                                <label htmlFor={`custom-checkbox-${index}`}>
+                                                                <label htmlFor={`custom-checkbox-${index}`} onClick={shoot}>
                                                                     <div>{icon}</div>
                                                                     <span className='opt-name'>{name}</span>
                                                                     <Form.Check
@@ -92,6 +118,7 @@ export default function Subscription() {
                                                                         value={name}
                                                                         checked={checkedState[index]}
                                                                         onChange={() => handleOnChange(index)}
+                                                                        
                                                                     />
                                                                     <div className="right-section">{getFormattedPrice(price)}</div>
                                                                 </label>
