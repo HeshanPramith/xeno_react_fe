@@ -4,7 +4,6 @@
 import * as React from 'react';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-// import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
@@ -13,7 +12,7 @@ import { faRightToBracket } from '@fortawesome/free-solid-svg-icons';
 import { faArrowRightLong } from '@fortawesome/free-solid-svg-icons';
 import Countrylist from '../Components/Countrylist';
 import 'react-phone-number-input/style.css';
-import PhoneInput from 'react-phone-number-input';
+import Phoneselector from '../Utils/Phoneselector';
 
 export default function Signup() {
 
@@ -35,8 +34,6 @@ export default function Signup() {
 
         setValidated(true);
     };
-
-    const [value, setValue] = useState()
 
     return (
         <>
@@ -113,9 +110,7 @@ export default function Signup() {
                                 </Form.Group>
                                 <Form.Group as={Col} xs="6" sm="6" controlId="validationCustom01" className='mb-1 mb-sm-3'>
                                     <Form.Label>Phone number <i>*</i></Form.Label>
-                                    <PhoneInput required international countryCallingCodeEditable={false} defaultCountry="LK" value={value} onChange={setValue}/>
-                                    <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
-                                    <Form.Control.Feedback type="invalid">Phone number is required</Form.Control.Feedback>
+                                    <Phoneselector />
                                 </Form.Group>
                             </Row>
                             <Link size='sm' className='signupbt btn btn-sm' to="/Usersignup"><FontAwesomeIcon icon={faRightToBracket} /> Sign Up</Link>

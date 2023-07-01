@@ -10,10 +10,10 @@ import Leftmenu from '../Components/Leftmenu';
 import Form from 'react-bootstrap/Form';
 import { Button, Image } from 'react-bootstrap';
 import 'react-phone-number-input/style.css';
-import PhoneInput from 'react-phone-number-input';
 import TimezoneSelect from 'react-timezone-select';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleXmark, faFloppyDisk } from '@fortawesome/free-solid-svg-icons';
+import Phoneselector from '../Utils/Phoneselector';
 
 export default function Company() {
 
@@ -23,10 +23,6 @@ export default function Company() {
             document.body.classList.remove('common-page', 'company')
         }
     }, [])
-
-    const [value, setValue] = useState()
-
-    const [value2, setValue2] = useState()
 
     const [selectedTimezone, setSelectedTimezone] = useState (
         Intl.DateTimeFormat().resolvedOptions().timeZone
@@ -151,7 +147,7 @@ export default function Company() {
                                     <Col xs={6} sm={6} md={6} lg={3} xl={3} xxl={3}>
                                         <Form.Group className="mb-3">
                                             <Form.Label>Company Phone Number</Form.Label>
-                                            <PhoneInput required international countryCallingCodeEditable={false} defaultCountry="LK" value={value} onChange={setValue}/>
+                                            <Phoneselector />
                                         </Form.Group>
                                     </Col>
                                     <Col xs={6} sm={6} md={6} lg={3} xl={3} xxl={3}>
@@ -208,7 +204,7 @@ export default function Company() {
                                     <Col xs={6} sm={6} md={6} lg={3} xl={3} xxl={3}>
                                         <Form.Group className="mb-3">
                                             <Form.Label>Contact Person's Phone Number <i>*</i></Form.Label>
-                                            <PhoneInput required international countryCallingCodeEditable={false} defaultCountry="LK" value={value2} onChange={setValue2}/>
+                                            <Phoneselector />
                                         </Form.Group>
                                     </Col>
                                 </Row>
